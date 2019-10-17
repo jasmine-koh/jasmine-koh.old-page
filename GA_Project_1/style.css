@@ -1,0 +1,50 @@
+
+
+h1 {
+	color: #41bf7e;
+	font-family:  'Lacquer', cursive;
+	font-size: 75px;
+	text-shadow: 3px 3px #FFFFFF;
+}
+
+#villager, #seer, #werewolf, #witch {
+	width: 20%;
+	height: 20%;
+}
+
+#modDiv, #bodyDiv {
+	background-color: #000000;
+	max-width: 95%;
+	margin: 0 auto;
+}
+
+
+
+p {
+	color: #41bf7e;
+	font-family:  'Lacquer', cursive;
+	text-align: left;
+	font-size: 25px;
+}
+
+
+#displayPlayerCharacter {
+	z-index: 3;
+	position: absolute;
+	max-width: 95%;
+	margin: 45px;
+}
+
+#displayPlayerCharacter>img {
+	opacity: 0.87;
+	margin: 2px;
+	width: 17%;
+	height: 17%;
+	margin: 2px 9px;
+
+}
+
+#buttons {
+	z-index: 2;
+	position: absolute;
+}

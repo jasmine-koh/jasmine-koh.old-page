@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Werewolf Game</title>
+
+    <!-- required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Javascript related tags -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js" type="text/javascript"></script>
+
+    <!-- CSS and Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Lacquer&display=swap');
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-left">
+                Werewolves
+            </h1>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Instructions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Messages</a>
+                </li>
+                <li class="nav-item dropdown ml-md-auto">
+                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                         <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider">
+                        </div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="bodyDiv" class="col-md-12">
+
+            <div id="buttons">
+                 <button id="settings" type="button" class="btn btn-primary" data-toggle="modal" data-target="#playerModal" >Settings</button>
+                <button id="start" type="button" class="btn btn-primary" data-toggle="modal" data-target="#displayCharacter">New Game</button>
+            </div>
+
+            <div id="displayPlayerCharacter"></div>
+            <img id="background" src="images\main_background.png" class="img-fluid " alt="werewolf silhouette">
+
+
+
+            <!-- Modal - Number of Players -->
+            <div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                     </div>
+
+                     <form class="form-horizontal">
+
+                        <div class="modal-body">
+                           <div class="form-group">
+                              <label>Number of Players: </label>
+                              <div>
+                                 <input id="playerNumber" type="text" class="form-control" placeholder="1">
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- modal-body -->
+                        <div class="modal-footer">
+                            <button id="playerNos" type="button" class="btn btn-primary" data-toggle="modal" data-target="#characterModal">Next</button>
+                            <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+
+                     </form>
+
+                  </div>
+               </div>
+            </div>
+
+            <!-- Modal - Characters -->
+            <div class="modal fade" id="characterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+
+                     <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                     </div>
+
+                     <form class="form-horizontal">
+                        <div class="modal-body">
+                            <div class="form-group">
+                              <label>Number of Villagers: </label>
+                              <div>
+                                 <input id="villagerNumber" type="text" class="form-control" placeholder="1">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label>Number of Werewolves: </label>
+                              <div>
+                                 <input id="werewolvesNumber" type="text" class="form-control" placeholder="1">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label>Number of Seers: </label>
+                              <div>
+                                 <input id="seersNumber" type="text" class="form-control" placeholder="1">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label>Number of Witches: </label>
+                              <div>
+                                 <input id="witchesNumber" type="text" class="form-control" placeholder="1">
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- modal-body -->
+                        <div class="modal-footer">
+                           <button id="characterAllocation" type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                        </div>
+                     </form>
+
+                  </div>
+               </div>
+            </div>
+
+
+            <!-- Modal - Assigning Characters to Players -->
+            <div class="modal" id="displayCharacter" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Please choose a card.</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p id="cards"></p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button id="continue" type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div id="modDiv" class="col-md-12">
+            <p id="moderator">Moderator</p>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
