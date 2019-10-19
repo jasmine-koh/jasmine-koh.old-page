@@ -287,14 +287,16 @@ const speechTime = function() {
     $(`#nextButton7`).remove();
 
     let next = $(`<button>`).text(`Next`).addClass(`btn btn-primary`).attr(`id`,`nextButton8`).appendTo($(`#modDiv`));
-    // let end = $(`<button>`).text(`End`).addClass(`btn btn-primary`).attr(`id`,`end`).appendTo($(`#modDiv`));
+    let end = $(`<button>`).text(`End`).addClass(`btn btn-primary`).attr(`id`,`end`).appendTo($(`#modDiv`));
 
     // console.log(`day time`);
 
     // $(`.char`).on(`click`, deathImage);
-    $(`#moderator`).html(`Mod, announce players that were killed. Starting from first living player, players give their speech. <br/> After introduction, vote to kill a player. <br/> Please click on the player that is killed. <br/> Moderator, please check and announce if game has ened.`);
+    $(`#moderator`).html(`Mod, announce players that were killed. Starting from first living player, players give their speech. <br/> After introduction, vote to kill a player. <br/> Please click on the player that is killed. <br/> Moderator, please check and announce if game has ended.`);
     $(`#nextButton8`).on(`click`, nightTime);
-    // $(`#end`).on(`click`,)
+    $(`#end`).on(`click`, function() {
+        location.reload();
+    });
 
     // console.log(`day to night time`);
 }
