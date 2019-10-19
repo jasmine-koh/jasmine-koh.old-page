@@ -1,5 +1,9 @@
 
 
+body{
+	background-color: #000000;
+}
+
 h1 {
 	color: #41bf7e;
 	font-family:  'Lacquer', cursive;
@@ -27,7 +31,7 @@ p {
 	color: #41bf7e;
 	font-family:  'Lacquer', cursive;
 	text-align: left;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 
