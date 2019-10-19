@@ -358,7 +358,7 @@ const seerTime = function() {
     let next = $(`<button>`).text(`Next`).addClass(`btn btn-primary`).attr(`id`,`nextButton6`).appendTo($(`#modDiv`));
 
     // console.log(`seer time`);
-    $(`#moderator`).html(`Seer, please open your eyes. Please pick someone to ask about. <br/> If the person is a werewolf, show a thumbs down. Otherwise, show a thumbs up. <br/> Seer, please close your eyes.`);
+    $(`#moderator`).html(`Seer, please open your eyes. Pick someone to ask about. <br/> If person is a werewolf, show thumbs down. Otherwise, show thumbs up. <br/> Seer, please close your eyes.`);
     $(`#nextButton6`).on(`click`, dayTime);
 
     // console.log(`seer to day time`);
@@ -430,14 +430,14 @@ let night = 0;
 let day = 0;
 let arrayCount = 0;
 
-let timeArray = [
-    function() {nightTime()},
-    function() {wolfTime()},
-    function() {witchPotionTime()},
-    function() {witchPoisonTime()},
-    function() {seerTime()},
-    function() {dayTime()}
-]
+// let timeArray = [
+//     function() {nightTime()},
+//     function() {wolfTime()},
+//     function() {witchPotionTime()},
+//     function() {witchPoisonTime()},
+//     function() {seerTime()},
+//     function() {dayTime()}
+// ]
 
 
 
